@@ -1,0 +1,174 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.google.com/specimen/Montserrat" rel="stylesheet" />
+  <title>Random Artist Card</title>
+
+  <style>
+    * {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.card {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content {
+  max-width: 40rem;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  border-radius: 20px;
+  background: hsl(212, 21%, 14%);
+}
+.content img {
+  height: 300px;
+  object-fit: cover;
+}
+
+.content p {
+  color: white;
+  margin-left: 0px;
+  margin: 0 0 35px 0;
+  font-size: 16px;
+  text-align: center;
+  font-family: Fraunces;
+}
+
+.content h1 {
+  text-align: center;
+  font-family: Montserrat;
+  margin: 0 0 35px 0;
+  color: white;
+  font-size: 33px;
+}
+
+.product-price-btn {
+  height: 103px;
+  width: 327px;
+  margin-top: 0px;
+  position: bottom;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.product-price-btn button {
+  height: 50px;
+  width: 176px;
+  margin: auto;
+  border: solid black;
+  border-radius: 20px;
+  font-family: "Raleway", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: Black;
+  background-color: hsl(158, 36%, 37%);
+  cursor: pointer;
+}
+
+.product-price-btn button:hover {
+  background-color: hsl(158, 37%, 58%);
+}
+  </style>
+
+
+</head>
+
+
+<body>
+
+  <div class="card">
+    <div class="content">
+      <img src="https://tinyurl.com/2jdsdb2x" alt="" class="img" height="200" width="300" />
+      <div class="text">
+        <h1 class="Artist"></h1>
+        <p class="SongTitle"></p>
+        <p class="AlbumName"></p>
+        <div class="product-price-btn">
+          <button class="artistbtn" type="button">Your Artist</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    src =
+  "https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js";
+
+let TwoKSongs = [
+  {
+    SongName: "Fireman",
+    Album: "The Carter II",
+    Artist: "Lil Wayne",
+    img: "https://tinyurl.com/2jdsdb2x"
+  },
+  {
+    SongName: "Californication",
+    Album: "Californication",
+    Artist: "Red Hot Chili Peppers",
+    img: "https://tinyurl.com/2pmb8r3m"
+  },
+  {
+    SongName: "Seven Nation Army",
+    Album: "Elephant",
+    Artist: "White Stripes",
+    img: "https://tinyurl.com/2oex9cp2"
+  },
+  {
+    SongName: "Ms. Jackson",
+    Album: "Stankonia",
+    Artist: "Outkast",
+    img: "https://tinyurl.com/2pblf923"
+  },
+  {
+    SongName: "In the End",
+    Album: "Hybrid Theory",
+    Artist: "Linkin Park",
+    img: "https://tinyurl.com/2zr49be3"
+  },
+  {
+    SongName: "Try Again",
+    Album: "Romeo Must Die",
+    Artist: "Aaliyah",
+    img: "https://tinyurl.com/2nszdznr"
+  },
+  {
+    SongName: "Lose Yourself",
+    Album: "8 Mile",
+    Artist: "Eminem",
+    img: "https://tinyurl.com/2ee98gcd"
+  }
+];
+//let getArtist = document.querySelector("");
+let getartistbtn = document.querySelector(".artistbtn");
+let getSongTitle = document.querySelector(".SongTitle");
+let getArtist = document.querySelector(".Artist");
+let img = document.querySelector(".img");
+let getAlbumName = document.querySelector(".AlbumName");
+getartistbtn.addEventListener("click", function () {
+  //console.log("Test!")
+  console.log("Test!");
+  let randomSongs = Math.floor(Math.random() * TwoKSongs.length);
+  getSongTitle.innerHTML = TwoKSongs[randomSongs].SongName;
+  getArtist.innerHTML = TwoKSongs[randomSongs].Artist;
+  getAlbumName.innerHTML = TwoKSongs[randomSongs].Album;
+  img.src = TwoKSongs[randomSongs].img;
+});
+  </script>
+</body>
+
+</html>
